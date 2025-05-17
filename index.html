@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClassroomHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📚 ClassroomHub</h1>
+    <nav>
+      <a href="#upload">Upload</a>
+      <a href="#materials">Materials</a>
+      <a href="#homework">Homework</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="upload">
+      <h2>Upload Resource</h2>
+      <form id="uploadForm">
+        <input type="text" id="material-title" placeholder="Title" required />
+        <input type="text" id="material-subject" placeholder="Subject (e.g. Math)" required />
+        <input type="url" id="material-link" placeholder="Link to a site or video (optional)" />
+        <input type="file" id="material-file" accept=".pdf,.docx,.png,.jpg" />
+        <button type="submit" id="upload-btn">Upload</button>
+      </form>
+    </section>
+
+    <section id="materials">
+      <h2>Study Materials</h2>
+      <div id="materials-list" class="card-container">
+        <!-- Cards will be added dynamically -->
+      </div>
+    </section>
+
+    <section id="homework">
+      <h2>Homework Board</h2>
+      <form id="homeworkForm">
+        <input type="text" id="homework-title" placeholder="Homework Title" required />
+        <input type="text" id="homework-subject" placeholder="Subject (e.g. Science)" required />
+        <button type="submit" id="homework-btn">Add Homework</button>
+      </form>
+      <ul id="homework-list">
+        <!-- Homework items will appear here -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ClassroomHub. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Materials upload form
+    const uploadForm = document.getElementById('uploadForm');
+    const materialTitle = document.getElementById('material-title');
+    const materialSubject = document.getElementById('material-subject');
+    const materialLink = document.getElementById('material-link');
+    const materialFile = document.getElementById('material-file');
+    const materialsList = document.getElementById('materials-list');
+
+    uploadForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const title = materialTitle.value.trim();
+      const subject = materialSubject.value.trim();
+      const link = materialLink.value.trim();
+      const file = materialFile.files[0];
+
+      if (!title || !subject) {
+        alert("Please fill in both title and subject.");
+        return;
+      }
+
+      let contentHTML = `<h3>${title}</h3><p>${subject}</p>`;
+
+      if (link) {
+        contentHTML += `<p><a href="${link}" target="_blank">Related Link</a></p>`;
+      }
+
+      if (file) {
+        contentHTML += `<p>File: ${file.name}</p>`;
+      }
+
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = contentHTML + `<button class="delete-btn">Delete</button>`;
+      card.querySelector('.delete-btn').onclick = () => card.remove();
+
+      materialsList.appendChild(card);
+
+      materialTitle.value = '';
+      materialSubject.value = '';
+      materialLink.value = '';
+      materialFile.value = null;
+    });
+
+
+    // Homework form
+    const homeworkForm = document.getElementById('homeworkForm');
+    const homeworkTitle = document.getElementById('homework-title');
+    const homeworkSubject = document.getElementById('homework-subject');
+    const homeworkList = document.getElementById('homework-list');
+
+    homeworkForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const title = homeworkTitle.value.trim();
+      const subject = homeworkSubject.value.trim();
+
+      if (!title || !subject) {
+        alert("Please fill in both homework title and subject.");
+        return;
+      }
+
+      const li = document.createElement('li');
+      li.textContent = `${title} — ${subject} `;
+      const delBtn = document.createElement('button');
+      delBtn.textContent = 'Delete';
+      delBtn.style.marginLeft = '10px';
+      delBtn.onclick = () => li.remove();
+
+      li.appendChild(delBtn);
+      homeworkList.appendChild(li);
+
+      homeworkTitle.value = '';
+      homeworkSubject.value = '';
+    });
+  </script>
+</body>
+</html>
