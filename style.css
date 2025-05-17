@@ -1,0 +1,214 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #0a72ff; /* bright blue */
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(10,114,255,0.3);
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #bbe1ff;
+}
+
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px 60px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+h2 {
+  border-bottom: 3px solid #0a72ff;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #0a72ff;
+}
+
+form input[type="text"],
+form input[type="url"],
+form input[type="file"] {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="url"]:focus,
+form input[type="file"]:focus {
+  outline: none;
+  border-color: #0a72ff;
+  box-shadow: 0 0 8px #a0c8ff;
+}
+
+form button {
+  background-color: #0a72ff;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 15px 0;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+form button:hover {
+  background-color: #005acc;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(10,114,255,0.1);
+  padding: 20px;
+  width: 250px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(10,114,255,0.15);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #0a72ff;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.card p {
+  flex-grow: 1;
+  margin-bottom: 15px;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.card a {
+  color: #0a72ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  align-self: flex-end;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}
+
+#homework-list {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+#homework-list li {
+  background: #f0f6ff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(10,114,255,0.1);
+}
+
+#homework-list button {
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+#homework-list button:hover {
+  background-color: #cc0000;
+}
+
+footer {
+  background: #f0f4ff;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
