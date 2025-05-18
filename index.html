@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClassroomHub</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage-compat.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <h1>📚 ClassroomHub</h1>
+    <ul class="nav-links">
+      <li><a href="#materials">Materials</a></li>
+      <li><a href="#homework">Homework</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="upload-section" id="materials">
+      <h2>📁 Upload Materials</h2>
+      <input type="file" id="materialFile" />
+      <button onclick="uploadFile('materials')">Upload</button>
+      <progress id="materialProgress" value="0" max="100"></progress>
+      <ul id="materialList"></ul>
+    </section>
+
+    <section class="upload-section" id="homework">
+      <h2>📝 Upload Homework</h2>
+      <input type="file" id="homeworkFile" />
+      <button onclick="uploadFile('homework')">Upload</button>
+      <progress id="homeworkProgress" value="0" max="100"></progress>
+      <ul id="homeworkList"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
