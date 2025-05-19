@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClassroomHub (Local Only)</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <div class="container" role="main">
+    <h1>🚀 ClassroomHub (Local Only)</h1>
+    <nav aria-label="Main sections">
+      <ul class="section-tabs">
+        <li><a href="#materials" aria-controls="materials-section">📚 Materials</a></li>
+        <li><a href="#documents" aria-controls="documents-section">📄 Documents</a></li>
+        <li><a href="#homework" aria-controls="homework-section">📝 Homework</a></li>
+        <li><a href="#notebooks" aria-controls="notebooks-section">📒 Notebooks</a></li>
+      </ul>
+    </nav>
+    <section id="materials-section" class="upload-section window" aria-labelledby="materials-heading">
+      <h2 id="materials-heading">📚 Materials</h2>
+      <label for="materialsFile" class="file-label">Choose file to upload:</label>
+      <input type="file" id="materialsFile" aria-label="Upload material file" />
+      <div id="materialsList" class="file-list" aria-live="polite"></div>
+    </section>
+    <section id="documents-section" class="upload-section window" aria-labelledby="documents-heading">
+      <h2 id="documents-heading">📄 Documents</h2>
+      <label for="documentsFile" class="file-label">Choose file to upload:</label>
+      <input type="file" id="documentsFile" aria-label="Upload document file" />
+      <div id="documentsList" class="file-list" aria-live="polite"></div>
+    </section>
+    <section id="homework-section" class="upload-section window" aria-labelledby="homework-heading">
+      <h2 id="homework-heading">📝 Homework</h2>
+      <label for="homeworkFile" class="file-label">Choose file to upload:</label>
+      <input type="file" id="homeworkFile" aria-label="Upload homework file" />
+      <div id="homeworkList" class="file-list" aria-live="polite"></div>
+    </section>
+    <section id="notebooks-section" class="upload-section window" aria-labelledby="notebooks-heading">
+      <h2 id="notebooks-heading">📒 Notebooks</h2>
+      <label for="notebooksFile" class="file-label">Choose file to upload:</label>
+      <input type="file" id="notebooksFile" aria-label="Upload notebook file" />
+      <div id="notebooksList" class="file-list" aria-live="polite"></div>
+    </section>
+  </div>
+</body>
+</html>
