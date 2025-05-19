@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClassroomHub</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📚 ClassroomHub</h1>
+
+    <div class="upload-section">
+      <h2>📘 Upload Materials</h2>
+      <input type="file" id="materialsFile" />
+      <div id="materialsList" class="file-list"></div>
+    </div>
+
+    <div class="upload-section">
+      <h2>📝 Upload Homework</h2>
+      <input type="file" id="homeworkFile" />
+      <div id="homeworkList" class="file-list"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
