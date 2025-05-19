@@ -1,0 +1,241 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  color: #f8fafc;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background stars pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  background: url('https://svgshare.com/i/12dA.svg') repeat;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* Rocket sticker fixed on the right wall */
+body::after {
+  content: '🚀'; /* Only the rocket sticker */
+  position: fixed; /* Keep it fixed */
+  right: 30px; /* Distance from the right edge */
+  top: 50%; /* Start positioning from the vertical middle */
+  transform: translateY(-50%); /* Shift up by half its height to truly center vertically */
+  font-size: 3em; /* Make the rocket a bit bigger */
+  opacity: 0.7; /* More visible */
+  pointer-events: none;
+  /* Optional: Keep a simple animation */
+  animation: floatRocket 8s ease-in-out infinite;
+  z-index: 1; /* Ensure rocket is above background but below content */
+}
+
+/* Optional: Keyframes for the floating animation */
+@keyframes floatRocket {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0); /* Maintain vertical center */
+  }
+  50% {
+    transform: translateY(-50%) translateX(-15px); /* Add a slight horizontal movement */
+  }
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1; /* Ensure content is above the background/rocket */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #38bdf8;
+  text-shadow: 0 0 16px #38bdf8, 0 0 32px #0ea5e9;
+  font-size: 2.5em;
+  letter-spacing: 2px;
+}
+
+.section-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 32px;
+  flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
+}
+.section-tabs li a {
+  color: #facc15;
+  font-size: 1.1em;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 8px 8px 0 0;
+  background: rgba(30, 41, 59, 0.7);
+  box-shadow: 0 2px 8px #0ea5e9;
+  transition: background 0.2s, color 0.2s;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid transparent; /* Add border for hover effect consistency */
+}
+.section-tabs li a:hover, .section-tabs li a:focus {
+  background: #0ea5e9;
+  color: #fff;
+  border-color: #fff; /* Highlight border on hover/focus */
+}
+/* Optional: Style for active tab if you implement JS tab switching */
+.section-tabs li a.active {
+    background: #0ea5e9;
+    color: #fff;
+    border-color: #fff;
+    box-shadow: 0 4px 12px #0ea5e9;
+}
+
+
+.upload-section.window {
+  background: rgba(30, 41, 59, 0.95);
+  border-radius: 18px;
+  padding: 28px 24px 20px 24px;
+  margin-bottom: 48px;
+  border: 2px solid #38bdf8;
+  box-shadow: 0 0 32px 8px #38bdf8, 0 1.5px 8px 0 #334155;
+  position: relative;
+}
+
+/* Decorative element at the top of the window */
+.upload-section.window::before {
+  content: '';
+  position: absolute;
+  top: -16px; left: 24px;
+  width: 40px; height: 8px;
+  background: #facc15;
+  border-radius: 8px;
+  opacity: 0.5;
+}
+
+.upload-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #facc15;
+  text-shadow: 0 0 8px #facc15;
+  margin-top: 0;
+}
+
+.file-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #bae6fd;
+}
+
+input[type="file"] {
+  display: block;
+  margin-bottom: 16px;
+  color: #f8fafc;
+  /* Basic styling for file input */
+  background-color: #334155;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #60a5fa;
+}
+
+/* Style the file list container */
+.file-list {
+    margin-top: 20px;
+    border-top: 1px dashed rgba(96, 165, 250, 0.3); /* Separator line */
+    padding-top: 15px;
+}
+
+
+/* Style for individual file entries */
+.file-list .file-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(51, 65, 85, 0.95);
+  padding: 12px 16px;
+  margin-top: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.5); /* Blue glow effect */
+  font-size: 1.05em;
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+  border: 1px solid transparent; /* Add border for hover consistency */
+}
+
+.file-list .file-entry:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(14, 165, 233, 0.8); /* Stronger glow on hover */
+    border-color: #60a5fa; /* Blue border on hover */
+}
+
+
+/* Style for the link part */
+.file-entry a {
+  color: #60a5fa;
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: 500;
+  transition: color 0.2s;
+  cursor: pointer; /* Add pointer cursor to the link */
+}
+.file-entry a:hover {
+  color: #facc15;
+}
+
+/* Style for delete button */
+.file-entry button.delete-btn {
+  background: linear-gradient(90deg, #ef4444 60%, #facc15 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(14, 165, 233, 0.5); /* Blue glow */
+  transition: background 0.2s, box-shadow 0.2s;
+  flex-shrink: 0; /* Prevent button from shrinking */
+  margin-left: 10px; /* Space between file name and button */
+}
+.file-entry button.delete-btn:hover {
+  background: linear-gradient(90deg, #dc2626 60%, #facc15 100%);
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.8); /* Stronger glow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .container {
+    padding: 8px;
+  }
+  .upload-section {
+    padding: 16px 8px 12px 8px;
+  }
+  .section-tabs {
+    gap: 10px;
+    font-size: 0.95em;
+  }
+  .file-entry {
+      flex-direction: column; /* Stack file name and buttons on small screens */
+      align-items: flex-start;
+      gap: 8px; /* Space between stacked items */
+  }
+  .file-entry span:first-child {
+      word-break: break-all; /* Prevent long file names from overflowing */
+  }
+   .file-entry span:last-child {
+       display: flex;
+       align-items: center;
+   }
+   .file-entry button.delete-btn {
+       margin-left: 0; /* Remove left margin when stacked */
+   }
+}
